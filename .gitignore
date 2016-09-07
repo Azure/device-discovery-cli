@@ -1,0 +1,23 @@
+# Visual Studio #
+.settings/
+.vs/
+.vscode/
+
+# Node #
+node_modules/
+npm-debug.log
+
+# Builds #
+dist/*
+out/*
+tmp/*
+
+# Mac OS #
+.DS_Store
+.DS_Store?
+
+# Windows #
+Thumbs.db
+
+# Linux #
+*.swp

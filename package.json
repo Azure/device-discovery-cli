@@ -1,0 +1,43 @@
+{
+  "name": "device-discovery-cli",
+  "version": "0.1.0",
+  "description": "device discovery and management command line utility",
+  "bin": {
+    "devdisco": "./dist/devdisco.js"
+  },
+  "scripts": {
+    "build": "./node_modules/.bin/gulp build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "CLI",
+    "device",
+    "discovery",
+    "IoT"
+  ],
+  "author": "Microsoft Corporation",
+  "license": "MIT",
+  "dependencies": {
+    "dns": "^0.2.2",
+    "mdns-js": "^0.5.0",
+    "node-arp": "^1.0.5",
+    "node-wifiscanner": "^0.2.1",
+    "vow": "^0.4.12",
+    "serialport": "^4.0.1"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.14.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "stage-0"
+    ]
+  }
+}
