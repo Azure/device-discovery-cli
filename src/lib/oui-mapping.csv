@@ -1,0 +1,4 @@
+# OUI (https://en.wikipedia.org/wiki/Organizationally_unique_identifier) mapping
+
+02:A3:CF:00:00:00	02:A3:CF:FF:FF:FF	tessel
+B8:27:EB:00:00:00	B8:27:EB:FF:FF:FF	raspberrypi
