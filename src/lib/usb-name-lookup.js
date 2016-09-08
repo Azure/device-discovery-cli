@@ -16,9 +16,11 @@ var mapping = (function() {
 })();
 
 function resolveUsbName(id) {
-  for (var i = 0; i < mapping.length; i++) {
-    if (id.indexOf(mapping[i][0]) === 0) {
-      return mapping[i].slice(1);
+  if(id){
+    for (var i = 0; i < mapping.length; i++) {
+      if (id.indexOf(mapping[i][0]) === 0) {
+        return mapping[i].slice(1);
+      }
     }
   }
 }
