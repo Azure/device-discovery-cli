@@ -2,7 +2,7 @@
 
 > A cross platform command line utility which can discover devices connected via Ethernet, Wi-Fi and USB.
 
-*Issues with the output should be reported on the <https://github.com/Microsoft/device-discovery-cli/issues>.*
+*Issues with the output should be reported on the <https://github.com/Azure/device-discovery-cli/issues>.*
 
 
 ## Install
@@ -23,12 +23,11 @@ $ npm install --global device-discovery-cli
 
 	Sample:
 
-	devdisco list -eth      list the Ethernet devices
-	devdisco list -usb      list the USB serial devices
-	devdisco list -wifi     list the Wi-Fi devices
-	devdisco list -eth rp2  list the Ethernet devices which looks like Raspberry Pi2
-	
-	devdisco@1.0.0 /usr/bin/devdisco
+	devdisco list --eth      list the Ethernet devices
+	devdisco list --usb      list the USB serial devices
+	devdisco list --wifi     list the Wi-Fi devices
+
+	devdisco@0.5.0 /usr/bin/devdisco
 
 ## Sample Output
 

@@ -63,9 +63,9 @@ function help() {
     '',
     'Sample:',
     '',
-    'devdisco list -eth      list the Ethernet devices',
-    'devdisco list -usb      list the USB serial devices',
-    'devdisco list -wifi     list the Wi-Fi devices',
+    'devdisco list --eth      list the Ethernet devices',
+    'devdisco list --usb      list the USB serial devices',
+    'devdisco list --wifi     list the Wi-Fi devices',
     '',
   ].join('\r\n'));
   console.log('devdisco@' + VERSION, path.resolve(__dirname, 'devdisco'));
@@ -80,16 +80,16 @@ function cmd_list(argv) {
   var timeout = 5000; // 5 seconds
   for (var i = 0; i < argv.length; i++) {
     switch (argv[i]) {
-    case '-eth':
-    case '-usb':
-    case '-wifi':
+    case '--eth':
+    case '--usb':
+    case '--wifi':
       if (transport) {
         console.log('Transport has already been specified as', transport + '.');
         return 1;
       }
       transport = argv[i];
       break;
-    case '-timeout': // TODO: add documentation, we also need to check if multiple -timeout values have been specified
+    case '--timeout': // TODO: add documentation, we also need to check if multiple -timeout values have been specified
       timeout = parseInt(argv[++i]);
       if (isNaN(timeout)) {
         console.log('Timeout value must be specified as a positive number in milliseconds.');
@@ -103,13 +103,13 @@ function cmd_list(argv) {
   }
 
   switch (transport) {
-  case '-eth':
+  case '--eth':
     cmd_list_ethernet(timeout);
     break;
-  case '-usb':
+  case '--usb':
     cmd_list_usb_uart();
     break;
-  case '-wifi':
+  case '--wifi':
     cmd_list_wifi_ap();
     break;
   }
