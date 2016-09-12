@@ -155,7 +155,7 @@ var onDeviceDiscovered = function(record) {
     console.log(
       rpad(record.com_name, 22),
       rpad(record.device_name_or_manufacturer, 40),
-      rpad(record.device_type || '?', 48)
+      rpad(deviceInfoStr || '?', 48)
     );
     break;
   default:
