@@ -2,6 +2,7 @@
 
 var serialPort = require('serialport');
 var UsbNameLookup = require('./usb-name-lookup');
+var UsbDeviceTypeLookup = require('./usb-device-type-lookup');
 
 exports.beginDiscovery = function beginDiscovery(callback) {
   serialPort.list(function (err, ports) {
@@ -9,28 +10,20 @@ exports.beginDiscovery = function beginDiscovery(callback) {
       return;
     }
     ports.forEach(function(port) {
-      (function(com_name, pnp_id, vendor_id, product_id, manufacturer, specification) {
-        if(com_name && manufacturer) {
-          var deviceName = UsbNameLookup.resolveUsbName(pnp_id);
-          var device_name_or_manufacturer = deviceName ? deviceName : manufacturer;
-          var pnp_id_or_device_info;
-          if(pnp_id) {
-            pnp_id_or_device_info = pnp_id;
-          } else if(vendor_id && product_id) {
-            pnp_id_or_device_info = 'vendorId:' + vendor_id + '&productId:' + product_id;
-          } else {
-            pnp_id_or_device_info = '????????';
-          }
+      var deviceName = UsbNameLookup.resolveUsbName(port.pnpId);
+      var deviceNameOrManufacturer = deviceName ? deviceName : port.manufacturer;
+      var deviceType = UsbDeviceTypeLookup.resolveUsbName(port.pnpId);
+      (function(com_name, device_name_or_manufacturer, device_type) {
+        if(com_name && device_name_or_manufacturer) {
           var record = {
             com_name: com_name,
-            pnp_id_or_device_info: pnp_id_or_device_info,
             device_name_or_manufacturer: device_name_or_manufacturer,
-            specification: specification,
+            device_type: device_type,
             transport: 'usb-uart',
           };
           callback(record);
         }
-      })(port.comName, port.pnpId, port.vendorId, port.productId, port.manufacturer, ''); 
+      })(port.comName, deviceNameOrManufacturer, deviceType); 
     });
   });
 };

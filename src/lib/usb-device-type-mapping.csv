@@ -1,0 +1,23 @@
+# usb device type mapping
+
+# for Windows
+# for Intel Edison
+USB\VID_8087&PID_0A9E&MI_02\	edison (Intel Edison)
+USB\VID_8087&PID_0A9E\	edison (Intel Edison)
+# for Huzzah Feather ESP8266
+USB\VID_10C4&PID_EA60\	huzzah (Huzzah Feather ESP8266)
+# for Adafruit Feather M0
+USB\VID_239A&PID_800B&MI_00\	adafruit_feather_m0_usb (Adafruit Feather M0)
+# for SparkFun ESP8266 Thing
+FTDIBUS\VID_0403+PID_6015+DN01AIYZA\	thing (SparkFun ESP8266 Thing)
+
+# for Linux
+# for Intel Edison
+usb-Intel_Edison_	edison (Intel Edison)
+usb-FTDI_FT232R_USB_UART_	edison (Intel Edison)
+# for Huzzah Feather ESP8266
+usb-Silicon_Labs_CP2104_USB_to_UART_Bridge_Controller_	huzzah (Huzzah Feather ESP8266)
+# for Adafruit Feather M0
+usb-Adafruit_Feather_	adafruit_feather_m0_usb (Adafruit Feather M0)
+# for SparkFun ESP8266 Thing
+usb-FTDI_FT231X_USB_UART_	thing (SparkFun ESP8266 Thing)

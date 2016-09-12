@@ -1,5 +1,6 @@
 # usb name mapping
 
+# for Windows
 # for Intel Edison
 USB\VID_8087&PID_0A9E&MI_02\	Intel Edison Virtual Com Port
 USB\VID_8087&PID_0A9E\	Intel Edison USB Composite Device
@@ -9,3 +10,13 @@ USB\VID_10C4&PID_EA60\	Silicon Labs CP210x USB to UART Bridge
 USB\VID_239A&PID_800B&MI_00\	USB Serial Device 
 # for SparkFun ESP8266 Thing
 FTDIBUS\VID_0403+PID_6015+DN01AIYZA\	USB Serial Port 
+
+# for Linux
+usb-Intel_Edison_	Intel Edison
+usb-FTDI_FT232R_USB_UART_	FTDI FT232R USB
+# for Huzzah Feather ESP8266
+usb-Silicon_Labs_CP2104_USB_to_UART_Bridge_Controller_	CP2104 USB to UART Bridge Controller
+# for Adafruit Feather M0
+usb-Adafruit_Feather_	Adafruit Feather M0
+# for SparkFun ESP8266 Thing
+usb-FTDI_FT231X_USB_UART_	FTDI FT231X USB UART
