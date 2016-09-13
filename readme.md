@@ -54,10 +54,10 @@ $ npm install --global device-discovery-cli
 
 ##### USB UART Devices
 
-	COM Port      Device Id                              Device Type
+	COM Port     Device Name\Manufacturer                 Device Type (Friendly Name)
 
-	COM1          PCI\VEN_8086&DEV_1D26&SUBSYS_158A103C
-	COM2          PCI\VEN_8086&DEV_1D26&SUBSYS_158A103D  tessel (Tessel 2)
+	COM6         Intel Edison USB Composite Device        edison (Intel Edison)
+	COM7         Intel Edison Virtual Com Port            edison (Intel Edison)
 
 ##### Wi-Fi Access Points:
 
