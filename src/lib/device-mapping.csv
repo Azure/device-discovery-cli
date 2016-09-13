@@ -2,3 +2,7 @@
 
 tessel	Tessel 2
 raspberrypi	Raspberry Pi
+thingdev	SparkFun ESP8266 Thing Dev
+adafruit_feather_m0_usb	Adafruit Feather M0
+huzzah	Huzzah Feather ESP8266
+edison	Intel Edison
