@@ -9,7 +9,7 @@ FTDIBUS\VID_0403+PID_6001+	USB Serial Port	edison
 USB\VID_10C4&PID_EA60\	Silicon Labs CP210x USB to UART Bridge	huzzah
 # for Adafruit Feather M0
 USB\VID_239A&PID_800B&MI_00\	USB Serial Device	adafruit_feather_m0_usb
-# for SparkFun ESP8266 Thing
+# for SparkFun ESP8266 Thing Dev
 FTDIBUS\VID_0403+PID_6015+DN01AIYZA\	USB Serial Port	thingdev
 
 # for Linux
@@ -20,7 +20,7 @@ usb-FTDI_FT232R_USB_UART_	Intel Edison USB Composite Device	edison
 usb-Silicon_Labs_CP2104_USB_to_UART_Bridge_Controller_	Silicon Labs CP210x USB to UART Bridge	huzzah
 # for Adafruit Feather M0
 usb-Adafruit_Feather_	USB Serial Device	adafruit_feather_m0_usb
-# for SparkFun ESP8266 Thing
+# for SparkFun ESP8266 Thing Dev
 usb-FTDI_FT231X_USB_UART_	USB Serial Port	thingdev
 
 # for Mac
@@ -31,5 +31,5 @@ usb-VID_0403&PID_6001	USB Serial Port	edison
 usb-VID_10c4&PID_ea60	Silicon Labs CP210x USB to UART Bridge	huzzah
 # for Adafruit Feather M0
 usb-VID_239a&PID_800b	USB Serial Device	adafruit_feather_m0_usb
-# for SparkFun ESP8266 Thing
+# for SparkFun ESP8266 Thing Dev
 usb-VID_0403&PID_6015	USB Serial Port	thingdev
