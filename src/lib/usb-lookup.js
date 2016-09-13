@@ -5,7 +5,7 @@ var path = require('path');
 
 var mapping = (function() {
   var retval = [];
-  var data = fs.readFileSync(path.resolve(__dirname, 'usb-name-and-device-type-mapping.csv'), 'UTF-8').split(/\r\n|\r|\n/g);
+  var data = fs.readFileSync(path.resolve(__dirname, 'usb-mapping.csv'), 'UTF-8').split(/\r\n|\r|\n/g);
   for (var i = 0; i < data.length; i++) {
     var line = data[i];
     if (line && line[0] !== '#') {

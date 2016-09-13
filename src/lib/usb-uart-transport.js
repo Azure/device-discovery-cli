@@ -1,7 +1,7 @@
 'use-strict';
 
 var serialPort = require('serialport');
-var UsbNameAndDeviceTypeLookup = require('./usb-name-and-device-type-lookup');
+var UsbLookup = require('./usb-lookup');
 
 exports.beginDiscovery = function beginDiscovery(callback) {
   serialPort.list(function (err, ports) {
@@ -9,9 +9,9 @@ exports.beginDiscovery = function beginDiscovery(callback) {
       return;
     }
     ports.forEach(function(port) {
-      var deviceName = UsbNameAndDeviceTypeLookup.resolveUsbName(port.pnpId);
+      var deviceName = UsbLookup.resolveUsbName(port.pnpId);
       var deviceNameOrManufacturer = deviceName ? deviceName : port.manufacturer;
-      var deviceType = UsbNameAndDeviceTypeLookup.resolveDeviceType(port.pnpId);
+      var deviceType = UsbLookup.resolveDeviceType(port.pnpId);
       (function(com_name, device_name_or_manufacturer, device_type) {
         if(com_name && device_name_or_manufacturer) {
           var record = {
