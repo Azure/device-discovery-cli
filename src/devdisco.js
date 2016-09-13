@@ -153,9 +153,9 @@ var onDeviceDiscovered = function(record) {
     break;
   case 'usb-uart':
     console.log(
-      rpad(record.com_name, 22),
+      rpad(record.com_name, 28),
       rpad(record.device_name_or_manufacturer, 40),
-      rpad(deviceInfoStr || '?', 48)
+      rpad(deviceInfoStr || '?', 46)
     );
     break;
   default:
@@ -194,7 +194,7 @@ function cmd_list_usb_uart() {
   console.log('');
   console.log('USB Devices:');
   console.log('');
-  console.log(rpad('COM Port', 22), rpad('Device Name\\Manufacturer', 40), rpad('Device Type (Friendly Name)', 48));
+  console.log(rpad('COM Port', 28), rpad('Device Name\\Manufacturer', 40), rpad('Device Type (Friendly Name)', 46));
   console.log('');
   UsbUartTransport.beginDiscovery(onDeviceDiscovered);
 }

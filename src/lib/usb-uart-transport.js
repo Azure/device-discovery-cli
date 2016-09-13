@@ -9,9 +9,13 @@ exports.beginDiscovery = function beginDiscovery(callback) {
       return;
     }
     ports.forEach(function(port) {
-      var deviceName = UsbLookup.resolveUsbName(port.pnpId);
+      var pnpId = port.pnpId;
+      if(!pnpId && port.vendorId && port.productId){
+        pnpId = 'usb-VID_' + port.vendorId.split('0x')[1] + '&PID_' + port.productId.split('0x')[1];
+      }
+      var deviceName = UsbLookup.resolveUsbName(pnpId);
+      var deviceType = UsbLookup.resolveDeviceType(pnpId);
       var deviceNameOrManufacturer = deviceName ? deviceName : port.manufacturer;
-      var deviceType = UsbLookup.resolveDeviceType(port.pnpId);
       (function(com_name, device_name_or_manufacturer, device_type) {
         if(com_name && device_name_or_manufacturer) {
           var record = {
