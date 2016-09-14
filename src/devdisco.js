@@ -18,6 +18,7 @@
 
 'use strict';
 
+var bi = require('az-iot-bi-test');
 var path = require('path');
 
 var UsbUartTransport = require('./lib/usb-uart-transport');
@@ -28,6 +29,10 @@ var WifiApTransport = require('./lib/wifi-ap-transport');
 var VERSION = require('../package.json').version;
 
 function main(argv) {
+  bi.trackEvent('command_line_arguments', {
+    argv: argv
+  });
+
   if (argv.length === 1) {
     help();
     return 0;
@@ -199,4 +204,6 @@ function cmd_list_usb_uart() {
   UsbUartTransport.beginDiscovery(onDeviceDiscovered);
 }
 
+bi.start();
 main(process.argv.slice(1));
+bi.flush();
