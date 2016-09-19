@@ -10,7 +10,7 @@ USB\VID_10C4&PID_EA60\	Silicon Labs CP210x USB to UART Bridge	huzzah
 # for Adafruit Feather M0
 USB\VID_239A&PID_800B&MI_00\	USB Serial Device	adafruit_feather_m0_usb
 # for SparkFun ESP8266 Thing Dev
-FTDIBUS\VID_0403+PID_6015+DN01AIYZA\	USB Serial Port	thingdev
+FTDIBUS\VID_0403+PID_6015+	USB Serial Port	thingdev
 
 # for Linux
 # for Intel Edison
