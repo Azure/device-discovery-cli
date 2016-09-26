@@ -18,7 +18,7 @@
 
 'use strict';
 
-var bi = require('az-iot-bi-test');
+var bi = require('az-iot-bi');
 var path = require('path');
 
 var UsbUartTransport = require('./lib/usb-uart-transport');
@@ -197,7 +197,7 @@ function cmd_list_wifi_ap() {
 
 function cmd_list_usb_uart() {
   console.log('');
-  console.log('USB Devices:');
+  console.log('USB UART Devices:');
   console.log('');
   console.log(rpad('COM Port', 28), rpad('Device Name\\Manufacturer', 40), rpad('Device Type (Friendly Name)', 46));
   console.log('');

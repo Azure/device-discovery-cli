@@ -27,11 +27,11 @@ $ npm install --global device-discovery-cli
 	devdisco list --usb      list the USB serial devices
 	devdisco list --wifi     list the Wi-Fi devices
 
-	devdisco@0.5.0 /usr/bin/devdisco
+	devdisco@0.5.5 /usr/bin/devdisco
 
 ## Sample Output
 
-##### Ethernet Devices
+##### Ethernet LAN Devices:
 
 	IP Address    MAC Address       Type                                    Host Name
 
@@ -52,7 +52,7 @@ $ npm install --global device-discovery-cli
 	10.172.15.148 94:57:a5:cc:99:86 ?
 
 
-##### USB UART Devices
+##### USB UART Devices:
 
 	COM Port     Device Name\Manufacturer                 Device Type (Friendly Name)
 
