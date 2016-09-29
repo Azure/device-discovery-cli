@@ -1,6 +1,7 @@
 'use-strict';
 
 var arp = require('node-arp');
+var bi = require('az-iot-bi');
 var dns = require('dns');
 var mdns = require('mdns-js');
 var vow = require('vow');
@@ -11,6 +12,9 @@ function resolveIpAddressToHostNameAsync(address) {
   return new vow.Promise(function(resolve, reject /*, notify */) {
     dns.reverse(address, function(err, domains) {
       if(err) {
+        bi.trackEvent('ethernet_error', {
+          error: err
+        });
         reject(err);
         return;
       }
@@ -23,6 +27,9 @@ function resolveIpAddressToMacAddressAsync(address) {
   return new vow.Promise(function(resolve, reject /*, notify */) {
     arp.getMAC(address, function(err, mac) {
       if(err) {
+        bi.trackEvent('ethernet_error', {
+          error: err
+        });
         reject(err);
         return;
       }
