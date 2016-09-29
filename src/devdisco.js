@@ -204,8 +204,8 @@ function cmd_list_usb_uart() {
   UsbUartTransport.beginDiscovery(onDeviceDiscovered);
 }
 
-var d = require('domain').create();
-d.on('error', function(err){
+var domain = require('domain').create();
+domain.on('error', function(err){
   bi.trackEvent('unknown_error', {
     error: err
   });
@@ -213,7 +213,7 @@ d.on('error', function(err){
   console.log(err);
 })
 
-d.run(function(){
+domain.run(function(){
   bi.start();
   main(process.argv.slice(1));
   bi.flush();
