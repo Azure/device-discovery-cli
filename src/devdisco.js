@@ -30,7 +30,7 @@ var VERSION = require('../package.json').version;
 
 function main(argv) {
   bi.trackEvent('command_line_arguments', {
-    argv: argv
+    info: argv
   });
 
   if (argv.length === 1) {
