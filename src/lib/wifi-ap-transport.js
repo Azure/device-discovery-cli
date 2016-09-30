@@ -9,7 +9,7 @@ exports.beginDiscovery = function beginDiscovery(callback) {
     wifiscanner.scan(function(err, data) {
       if (err) {
         bi.trackEvent('wifi_error', {
-          error: err
+          error: err.message
         });
         reject('\nProbably no Wi-Fi module on this computer.\n' + err.message);
         return;

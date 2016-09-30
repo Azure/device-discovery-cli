@@ -13,7 +13,7 @@ function resolveIpAddressToHostNameAsync(address) {
     dns.reverse(address, function(err, domains) {
       if(err) {
         bi.trackEvent('ethernet_error', {
-          error: err
+          error: err.message
         });
         reject(err);
         return;
@@ -28,7 +28,7 @@ function resolveIpAddressToMacAddressAsync(address) {
     arp.getMAC(address, function(err, mac) {
       if(err) {
         bi.trackEvent('ethernet_error', {
-          error: err
+          error: err.message
         });
         reject(err);
         return;

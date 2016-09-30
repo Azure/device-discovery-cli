@@ -9,7 +9,7 @@ exports.beginDiscovery = function beginDiscovery(callback) {
     serialPort.list(function (err, ports) {
       if(err){
         bi.trackEvent('usb_error', {
-          error: err
+          error: err.message
         });
         reject(err);
         return;

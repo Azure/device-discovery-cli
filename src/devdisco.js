@@ -30,7 +30,7 @@ var VERSION = require('../package.json').version;
 
 function main(argv) {
   bi.trackEvent('command_line_arguments', {
-    info: argv
+    info: argv.join(' ')
   });
 
   if (argv.length === 1) {
@@ -207,7 +207,7 @@ function cmd_list_usb_uart() {
 var domain = require('domain').create();
 domain.on('error', function(err){
   bi.trackEvent('unknown_error', {
-    error: err
+    error: err.message
   });
   bi.flush();
   console.log(err);
