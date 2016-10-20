@@ -1,6 +1,6 @@
 {
   "name": "device-discovery-cli",
-  "version": "0.5.5",
+  "version": "0.5.6",
   "description": "device discovery and management command line utility",
   "bin": {
     "devdisco": "./dist/devdisco.js"
@@ -25,7 +25,7 @@
     "url": "https://github.com/Azure/device-discovery-cli"
   },
   "dependencies": {
-    "az-iot-bi-test": "0.0.3",
+    "az-iot-bi": "0.1.7",
     "dns": "^0.2.2",
     "mdns-js": "^0.5.0",
     "node-arp": "^1.0.5",

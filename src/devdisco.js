@@ -18,7 +18,7 @@
 
 'use strict';
 
-var bi = require('az-iot-bi-test');
+var bi = require('az-iot-bi');
 var path = require('path');
 
 var UsbUartTransport = require('./lib/usb-uart-transport');
@@ -30,7 +30,7 @@ var VERSION = require('../package.json').version;
 
 function main(argv) {
   bi.trackEvent('command_line_arguments', {
-    argv: argv
+    info: argv.join(' ')
   });
 
   if (argv.length === 1) {
@@ -197,13 +197,24 @@ function cmd_list_wifi_ap() {
 
 function cmd_list_usb_uart() {
   console.log('');
-  console.log('USB Devices:');
+  console.log('USB UART Devices:');
   console.log('');
   console.log(rpad('COM Port', 28), rpad('Device Name\\Manufacturer', 40), rpad('Device Type (Friendly Name)', 46));
   console.log('');
   UsbUartTransport.beginDiscovery(onDeviceDiscovered);
 }
 
-bi.start();
-main(process.argv.slice(1));
-bi.flush();
+var domain = require('domain').create();
+domain.on('error', function(err){
+  bi.trackEvent('unknown_error', {
+    error: err.message
+  });
+  bi.flush();
+  console.log(err);
+})
+
+domain.run(function(){
+  bi.start();
+  main(process.argv.slice(1));
+  bi.flush();
+})
