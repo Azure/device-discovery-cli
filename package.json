@@ -25,7 +25,7 @@
     "url": "https://github.com/Azure/device-discovery-cli"
   },
   "dependencies": {
-    "az-iot-bi": "0.1.7",
+    "az-iot-bi": "0.1.9",
     "dns": "^0.2.2",
     "mdns-js": "^0.5.0",
     "node-arp": "^1.0.5",
