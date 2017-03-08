@@ -1,6 +1,6 @@
 {
   "name": "device-discovery-cli",
-  "version": "0.5.9",
+  "version": "0.5.10",
   "description": "device discovery and management command line utility",
   "bin": {
     "devdisco": "./dist/devdisco.js"
