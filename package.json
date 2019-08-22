@@ -1,6 +1,6 @@
 {
   "name": "device-discovery-cli",
-  "version": "0.5.10",
+  "version": "0.6.0",
   "description": "device discovery and management command line utility",
   "bin": {
     "devdisco": "./dist/devdisco.js"
@@ -30,7 +30,7 @@
     "mdns-js": "^0.5.0",
     "node-arp": "^1.0.5",
     "node-wifiscanner": "^0.2.1",
-    "serialport": "^4.0.1",
+    "serialport": "^7.1.5",
     "vow": "^0.4.12"
   },
   "devDependencies": {
